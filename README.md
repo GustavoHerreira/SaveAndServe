@@ -1,5 +1,7 @@
 # SaveAndServe
 
+> **Important Note**: This repository contains an AI-generated prototype project that serves as a mockup for the final product. It is designed to demonstrate the platform's potential features and user interface through a front-end only implementation with mock data. This prototype should not be considered production-ready code, but rather a visual and functional representation to guide the development of the actual product.
+
 SaveAndServe is a platform designed to connect food donors/vendors with recipients, helping reduce food waste and serve those in need. This project implements a front-end only solution using HTML, Bootstrap, and JavaScript without any frameworks.
 
 ## Project Overview
