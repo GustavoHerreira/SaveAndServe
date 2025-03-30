@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaveAndServe - Reduzindo o Desperdício de Alimentos, Servindo aos Necessitados</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.svg" alt="SaveAndServe Logo" height="40" class="d-inline-block align-text-midle">
+                SaveAndServe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/vendors.html">Encontrar Alimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contact.html">Contato</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="pages/login.html" class="btn btn-outline-primary me-2">Entrar</a>
+                    <a href="pages/register.html" class="btn btn-primary">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Reduzindo o Desperdício de Alimentos, Servindo aos Necessitados</h1>
+                    <p class="lead my-4">SaveAndServe conecta doadores/vendedores de alimentos com beneficiários, criando uma solução sustentável para reduzir o desperdício de alimentos enquanto ajuda aqueles que enfrentam insegurança alimentar.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="pages/register.html?type=recipient" class="btn btn-primary btn-lg px-4 me-md-2">Encontrar Alimentos</a>
+                        <a href="pages/register.html?type=donor" class="btn btn-outline-secondary btn-lg px-4">Tornar-se um Doador / Vendedor</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/images/hero-image.svg" alt="Plataforma SaveAndServe" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Como o SaveAndServe Funciona</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="fas fa-store fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Doadores / Vendedores Listam Alimentos</h5>
+                            <p class="card-text">Restaurantes, supermercados e indivíduos listam alimentos excedentes que de outra forma seriam desperdiçados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="fas fa-shopping-cart fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Beneficiários Reservam Itens</h5>
+                            <p class="card-text">Pessoas necessitadas navegam pelos itens disponíveis e reservam o que precisam através da nossa plataforma simples.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                                <i class="fas fa-handshake fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Retirada ou Entrega</h5>
+                            <p class="card-text">Os beneficiários podem retirar seus itens ou, em alguns casos, tê-los entregues em sua localização.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Nosso Impacto</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="display-4 fw-bold text-primary">5.000+</div>
+                    <p class="lead">Refeições Salvas</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="display-4 fw-bold text-primary">200+</div>
+                    <p class="lead">Doadores / Vendedores Ativos</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="display-4 fw-bold text-primary">1.000+</div>
+                    <p class="lead">Beneficiários Ajudados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">O Que as Pessoas Estão Dizendo</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="assets/images/testimonial-1.svg" alt="Depoimento" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Maria Silva</h5>
+                                    <p class="text-muted mb-0">Beneficiária</p>
+                                </div>
+                            </div>
+                            <p class="mb-0">"O SaveAndServe tem sido uma bênção para minha família. Conseguimos acessar alimentos de qualidade que de outra forma seriam desperdiçados, e o processo é simples e digno."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="assets/images/testimonial-2.svg" alt="Depoimento" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">João Oliveira</h5>
+                                    <p class="text-muted mb-0">Proprietário de Restaurante</p>
+                                </div>
+                            </div>
+                            <p class="mb-0">"Como proprietário de restaurante, eu odiava ver bons alimentos sendo desperdiçados. Com o SaveAndServe, reduzimos nosso desperdício em 40% e ajudamos nossa comunidade local ao mesmo tempo."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News and Updates Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Últimas Notícias e Atualizações</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Novo Aplicativo Móvel em Breve</h5>
+                            <p class="text-muted mb-2"><small><i class="far fa-calendar-alt me-1"></i> 15 de Junho, 2023</small></p>
+                            <p class="card-text">Estamos animados em anunciar que nosso aplicativo móvel está em desenvolvimento e estará disponível para dispositivos iOS e Android em breve.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leia Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Parceria com Fazendas Locais</h5>
+                            <p class="text-muted mb-2"><small><i class="far fa-calendar-alt me-1"></i> 28 de Maio, 2023</small></p>
+                            <p class="card-text">O SaveAndServe fez parceria com 15 fazendas locais para ajudar a distribuir produtos frescos para comunidades necessitadas.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leia Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Destaque da Comunidade: Banco de Alimentos</h5>
+                            <p class="text-muted mb-2"><small><i class="far fa-calendar-alt me-1"></i> 10 de Maio, 2023</small></p>
+                            <p class="card-text">Este mês estamos destacando o incrível trabalho do Banco Central de Alimentos e sua parceria com o SaveAndServe.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Leia Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Junte-se ao Movimento Hoje</h2>
+            <p class="lead mb-4">Seja você alguém que busca doar alimentos ou acessar recursos, o SaveAndServe facilita o início.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="pages/register.html?type=donor" class="btn btn-light btn-lg px-4 gap-3">Torne-se um Doador / Vendedor</a>
+                <a href="pages/register.html?type=recipient" class="btn btn-outline-light btn-lg px-4">Encontrar Alimentos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>SaveAndServe</h5>
+                    <p>Reduzindo o desperdício de alimentos e servindo aos necessitados através de uma plataforma baseada na comunidade.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Início</a></li>
+                        <li><a href="pages/about.html" class="text-white">Sobre Nós</a></li>
+                        <li><a href="pages/contact.html" class="text-white">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Recursos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/faq.html" class="text-white">Perguntas Frequentes</a></li>
+                        <li><a href="pages/privacy.html" class="text-white">Política de Privacidade</a></li>
+                        <li><a href="pages/terms.html" class="text-white">Termos e Condições</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>Fique Conectado</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p>Inscreva-se em nossa newsletter para atualizações</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Endereço de email">
+                        <button class="btn btn-primary" type="button">Inscrever-se</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                <p>&copy; 2023 SaveAndServe. Todos os direitos reservados.</p>
+                <div>
+                    <a href="pages/privacy.html" class="text-white me-3">Política de Privacidade</a>
+                    <a href="pages/terms.html" class="text-white me-3">Termos e Condições</a>
+                    <a href="pages/contact.html#feedback" class="text-white">Feedback</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

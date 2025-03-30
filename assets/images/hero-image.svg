@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="20" ry="20"/>
+  
+  <!-- Food Basket -->
+  <ellipse cx="400" cy="450" rx="200" ry="50" fill="#e9ecef"/>
+  <path d="M250 450 C250 350, 550 350, 550 450" fill="none" stroke="#4CAF50" stroke-width="10"/>
+  <path d="M250 450 C250 400, 550 400, 550 450" fill="none" stroke="#4CAF50" stroke-width="5"/>
+  
+  <!-- Food Items -->
+  <!-- Apple -->
+  <circle cx="320" cy="400" r="30" fill="#dc3545"/>
+  <path d="M320 370 C325 360, 335 360, 340 370" fill="none" stroke="#6c757d" stroke-width="3"/>
+  
+  <!-- Bread -->
+  <ellipse cx="400" cy="390" rx="50" ry="30" fill="#ffc107"/>
+  <ellipse cx="400" cy="385" rx="45" ry="25" fill="#ffe082"/>
+  
+  <!-- Carrot -->
+  <path d="M470 410 L490 370" fill="none" stroke="#fd7e14" stroke-width="15" stroke-linecap="round"/>
+  <path d="M490 370 C500 360, 510 365, 505 375" fill="none" stroke="#6c757d" stroke-width="3"/>
+  <path d="M490 370 C480 360, 475 365, 485 375" fill="none" stroke="#6c757d" stroke-width="3"/>
+  
+  <!-- People Silhouettes -->
+  <!-- Person 1 (Donor) -->
+  <circle cx="250" cy="250" r="40" fill="#6c757d"/>
+  <path d="M250 290 L250 350 M230 320 L250 350 L270 320" fill="none" stroke="#6c757d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M220 250 C220 240, 240 230, 250 240" fill="none" stroke="#6c757d" stroke-width="3"/>
+  <path d="M280 250 C280 240, 260 230, 250 240" fill="none" stroke="#6c757d" stroke-width="3"/>
+  
+  <!-- Person 2 (Recipient) -->
+  <circle cx="550" cy="250" r="40" fill="#6c757d"/>
+  <path d="M550 290 L550 350 M530 320 L550 350 L570 320" fill="none" stroke="#6c757d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M530 260 C540 270, 560 270, 570 260" fill="none" stroke="#6c757d" stroke-width="3"/>
+  
+  <!-- Connection Arrow -->
+  <path d="M300 250 L500 250" fill="none" stroke="#4CAF50" stroke-width="5" stroke-dasharray="15,10"/>
+  <polygon points="490,230 520,250 490,270" fill="#4CAF50"/>
+  
+  <!-- Heart Symbol -->
+  <path d="M400 150 C370 110, 320 130, 340 170 C360 210, 400 220, 400 220 C400 220, 440 210, 460 170 C480 130, 430 110, 400 150 Z" fill="#FFC107"/>
+  
+  <!-- Text Labels -->
+  <text x="250" y="200" font-family="Arial" font-size="20" text-anchor="middle" fill="#343a40">Donor</text>
+  <text x="550" y="200" font-family="Arial" font-size="20" text-anchor="middle" fill="#343a40">Recipient</text>
+  <text x="400" y="100" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#4CAF50">SaveAndServe</text>
+  <text x="400" y="130" font-family="Arial" font-size="16" text-anchor="middle" fill="#6c757d">Reducing Food Waste, Serving Those in Need</text>
+</svg>

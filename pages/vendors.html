@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrar Alimentos - SaveAndServe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/images/logo.svg" alt="SaveAndServe Logo" height="40" class="d-inline-block align-text-midle">
+                SaveAndServe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Encontrar Alimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contato</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="./login.html" class="btn btn-outline-primary me-2">Entrar</a>
+                    <a href="./register.html" class="btn btn-primary">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <!-- Seção de Filtros -->
+        <section class="filters mb-5">
+            <div class="row g-3">
+                <div class="col-md-4 col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Buscar por nome ou descrição...">
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <select class="form-select">
+                        <option selected>Categoria</option>
+                        <option>Padaria</option>
+                        <option>Restaurante</option>
+                        <option>Supermercado</option>
+                        <option>Hortifruti</option>
+                    </select>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <select class="form-select">
+                        <option selected>Tipo de Oferta</option>
+                        <option>Doação</option>
+                        <option>Venda com Desconto</option>
+                    </select>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <select class="form-select">
+                        <option selected>Localização</option>
+                        <option>São Paulo - SP</option>
+                        <option>Rio de Janeiro - RJ</option>
+                        <option>Belo Horizonte - MG</option>
+                        <option>Salvador - BA</option>
+                        <option>Curitiba - PR</option>
+                    </select>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <select class="form-select">
+                        <option selected>Ordenar por</option>
+                        <option>Mais Recentes</option>
+                        <option>Menor Preço</option>
+                        <option>Maior Desconto</option>
+                    </select>
+                </div>
+                <div class="col-md-12 col-lg-1">
+                    <button type="button" class="btn btn-primary w-100">Aplicar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Produtos -->
+        <section class="products">
+            <div class="row g-4">
+                <!-- Produto 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
+                        <div class="card-body">
+                            <h5 class="card-title">Pães do Dia</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Padaria Bom Pão - São Paulo, SP</h6>
+                            <p class="card-text">Diversos tipos de pães do dia anterior com 50% de desconto.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success">Venda com Desconto</span>
+                                <span class="text-primary fw-bold">R$ 5,00/kg</span>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 20:00</small></p>
+                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
+                        <div class="card-body">
+                            <h5 class="card-title">Frutas e Legumes</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Mercado Fresh - Rio de Janeiro, RJ</h6>
+                            <p class="card-text">Frutas e legumes frescos para doação. Próprios para consumo imediato.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-info">Doação</span>
+                                <span class="text-primary fw-bold">Gratuito</span>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 18:00</small></p>
+                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
+                        <div class="card-body">
+                            <h5 class="card-title">Refeições Prontas</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Restaurante Sabor & Cia - Belo Horizonte, MG</h6>
+                            <p class="card-text">Marmitas do almoço com 70% de desconto. Pratos variados.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success">Venda com Desconto</span>
+                                <span class="text-primary fw-bold">R$ 8,00/un</span>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 15:00</small></p>
+                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
+                        <div class="card-body">
+                            <h5 class="card-title">Feijoada Completa</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Restaurante do Zé - Salvador, BA</h6>
+                            <p class="card-text">Feijoada tradicional com acompanhamentos. Última hora do almoço.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success">Venda com Desconto</span>
+                                <span class="text-primary fw-bold">R$ 15,00/porção</span>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 16:00</small></p>
+                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
+                        <div class="card-body">
+                            <h5 class="card-title">Produtos de Padaria</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Padaria Nova Era - Curitiba, PR</h6>
+                            <p class="card-text">Bolos, tortas e salgados do dia com 40% de desconto.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success">Venda com Desconto</span>
+                                <span class="text-primary fw-bold">A partir de R$ 3,00</span>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 19:00</small></p>
+                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
+                        <div class="card-body">
+                            <h5 class="card-title">Hortifruti do Dia</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Feira Livre Central - São Paulo, SP</h6>
+                            <p class="card-text">Verduras e legumes frescos para doação no fim da feira.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-info">Doação</span>
+                                <span class="text-primary fw-bold">Gratuito</span>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 14:00</small></p>
+                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginação -->
+            <nav class="mt-5" aria-label="Navegação de página">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Próxima</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 SaveAndServe. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

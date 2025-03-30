@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Plate Circle -->
+  <circle cx="256" cy="256" r="200" fill="#f8f9fa" stroke="#4CAF50" stroke-width="12"/>
+  
+  <!-- Fork -->
+  <path d="M180 120 L180 280 L160 300 L160 380" stroke="#4CAF50" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M140 120 L140 180 M160 120 L160 180 M180 120 L180 180" stroke="#4CAF50" stroke-width="12" stroke-linecap="round" fill="none"/>
+  
+  <!-- Knife -->
+  <path d="M320 120 L320 380" stroke="#4CAF50" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M280 120 C360 160, 360 200, 320 240" stroke="#4CAF50" stroke-width="12" stroke-linecap="round" fill="none"/>
+  
+  <!-- Heart in the middle -->
+  <path d="M256 280 C230 240, 180 260, 200 300 C220 340, 256 350, 256 350 C256 350, 292 340, 312 300 C332 260, 282 240, 256 280 Z" fill="#FFC107"/>
+</svg>

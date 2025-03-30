@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - SaveAndServe</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/images/logo.svg" alt="SaveAndServe Logo" height="40" class="d-inline-block align-text-midle">
+                SaveAndServe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vendors.html">Encontrar Alimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contato</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="login.html" class="btn btn-outline-primary me-2">Entrar</a>
+                    <a href="register.html" class="btn btn-primary active">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-7">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="text-center mb-4">Criar uma nova conta</h2>
+                            
+                            <!-- Registration Tabs -->
+                            <ul class="nav nav-pills nav-justified mb-4" id="registrationTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="recipient-tab" data-bs-toggle="pill" data-bs-target="#recipient-registration" type="button" role="tab" aria-controls="recipient-registration" aria-selected="true">Beneficiário</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="vendor-tab" data-bs-toggle="pill" data-bs-target="#vendor-registration" type="button" role="tab" aria-controls="vendor-registration" aria-selected="false">Doador / Vendedor</button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Registration Forms -->
+                            <div class="tab-content" id="registrationTabsContent">
+                                <!-- Recipient Registration Form -->
+                                <div class="tab-pane fade show active" id="recipient-registration" role="tabpanel" aria-labelledby="recipient-tab">
+                                    <form id="recipientRegistrationForm">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="recipientName" class="form-label">Nome Completo</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    <input type="text" class="form-control" id="recipientName" placeholder="Seu nome completo" required>
+                                                </div>
+                                                <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="recipientCPF" class="form-label">CPF</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                                    <input type="text" class="form-control" id="recipientCPF" placeholder="000.000.000-00" required>
+                                                </div>
+                                                <div class="invalid-feedback">Por favor, insira um CPF válido.</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipientEmail" class="form-label">Email</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                <input type="email" class="form-control" id="recipientEmail" placeholder="seu.email@exemplo.com" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira um email válido.</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="recipientPassword" class="form-label">Senha</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                    <input type="password" class="form-control" id="recipientPassword" placeholder="Sua senha" required>
+                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="invalid-feedback">Por favor, insira uma senha.</div>
+                                                <div class="form-text">A senha deve ter pelo menos 8 caracteres.</div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="recipientConfirmPassword" class="form-label">Confirmar Senha</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                    <input type="password" class="form-control" id="recipientConfirmPassword" placeholder="Confirme sua senha" required>
+                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="invalid-feedback">As senhas não coincidem.</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipientPhone" class="form-label">Telefone</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                <input type="tel" class="form-control" id="recipientPhone" placeholder="(00) 00000-0000" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira um telefone válido.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipientAddress" class="form-label">Endereço</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-home"></i></span>
+                                                <input type="text" class="form-control" id="recipientAddress" placeholder="Rua, número, bairro" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira seu endereço.</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="recipientCity" class="form-label">Cidade</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-city"></i></span>
+                                                    <input type="text" class="form-control" id="recipientCity" placeholder="Sua cidade" required>
+                                                </div>
+                                                <div class="invalid-feedback">Por favor, insira sua cidade.</div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="recipientState" class="form-label">Estado</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-map"></i></span>
+                                                    <select class="form-select" id="recipientState" required>
+                                                        <option value="" selected disabled>Selecione...</option>
+                                                        <option value="AC">Acre</option>
+                                                        <option value="AL">Alagoas</option>
+                                                        <option value="AP">Amapá</option>
+                                                        <option value="AM">Amazonas</option>
+                                                        <option value="BA">Bahia</option>
+                                                        <option value="CE">Ceará</option>
+                                                        <option value="DF">Distrito Federal</option>
+                                                        <option value="ES">Espírito Santo</option>
+                                                        <option value="GO">Goiás</option>
+                                                        <option value="MA">Maranhão</option>
+                                                        <option value="MT">Mato Grosso</option>
+                                                        <option value="MS">Mato Grosso do Sul</option>
+                                                        <option value="MG">Minas Gerais</option>
+                                                        <option value="PA">Pará</option>
+                                                        <option value="PB">Paraíba</option>
+                                                        <option value="PR">Paraná</option>
+                                                        <option value="PE">Pernambuco</option>
+                                                        <option value="PI">Piauí</option>
+                                                        <option value="RJ">Rio de Janeiro</option>
+                                                        <option value="RN">Rio Grande do Norte</option>
+                                                        <option value="RS">Rio Grande do Sul</option>
+                                                        <option value="RO">Rondônia</option>
+                                                        <option value="RR">Roraima</option>
+                                                        <option value="SC">Santa Catarina</option>
+                                                        <option value="SP">São Paulo</option>
+                                                        <option value="SE">Sergipe</option>
+                                                        <option value="TO">Tocantins</option>
+                                                    </select>
+                                                </div>
+                                                <div class="invalid-feedback">Por favor, selecione seu estado.</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipientZipCode" class="form-label">CEP</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                                <input type="text" class="form-control" id="recipientZipCode" placeholder="00000-000" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira um CEP válido.</div>
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="recipientTerms" required>
+                                            <label class="form-check-label" for="recipientTerms">Eu concordo com os <a href="terms.html">Termos e Condições</a> e a <a href="privacy.html">Política de Privacidade</a>.</label>
+                                            <div class="invalid-feedback">Você deve concordar com os termos para continuar.</div>
+                                        </div>
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <!-- Vendor Registration Form -->
+                                <div class="tab-pane fade" id="vendor-registration" role="tabpanel" aria-labelledby="vendor-tab">
+                                    <form id="vendorRegistrationForm">
+                                        <div class="mb-3">
+                                            <label for="vendorType" class="form-label">Tipo de Cadastro</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-store"></i></span>
+                                                <select class="form-select" id="vendorType" required>
+                                                    <option value="" selected disabled>Selecione...</option>
+                                                    <option value="individual">Pessoa Física</option>
+                                                    <option value="company">Pessoa Jurídica</option>
+                                                </select>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, selecione o tipo de cadastro.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vendorName" class="form-label">Nome / Razão Social</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                <input type="text" class="form-control" id="vendorName" placeholder="Nome completo ou razão social" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira o nome ou razão social.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vendorDocument" class="form-label">CPF / CNPJ</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                                <input type="text" class="form-control" id="vendorDocument" placeholder="000.000.000-00 ou 00.000.000/0000-00" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira um documento válido.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vendorEmail" class="form-label">Email</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                <input type="email" class="form-control" id="vendorEmail" placeholder="seu.email@exemplo.com" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira um email válido.</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="vendorPassword" class="form-label">Senha</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                    <input type="password" class="form-control" id="vendorPassword" placeholder="Sua senha" required>
+                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="invalid-feedback">Por favor, insira uma senha.</div>
+                                                <div class="form-text">A senha deve ter pelo menos 8 caracteres.</div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="vendorConfirmPassword" class="form-label">Confirmar Senha</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                    <input type="password" class="form-control" id="vendorConfirmPassword" placeholder="Confirme sua senha" required>
+                                                    <button class="btn btn-outline-secondary toggle-password" type="button">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="invalid-feedback">As senhas não coincidem.</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vendorPhone" class="form-label">Telefone</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                <input type="tel" class="form-control" id="vendorPhone" placeholder="(00) 00000-0000" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira um telefone válido.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vendorAddress" class="form-label">Endereço</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-home"></i></span>
+                                                <input type="text" class="form-control" id="vendorAddress" placeholder="Rua, número, bairro" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira seu endereço.</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="vendorCity" class="form-label">Cidade</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-city"></i></span>
+                                                    <input type="text" class="form-control" id="vendorCity" placeholder="Sua cidade" required>
+                                                </div>
+                                                <div class="invalid-feedback">Por favor, insira sua cidade.</div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="vendorState" class="form-label">Estado</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="fas fa-map"></i></span>
+                                                    <select class="form-select" id="vendorState" required>
+                                                        <option value="" selected disabled>Selecione...</option>
+                                                        <option value="AC">Acre</option>
+                                                        <option value="AL">Alagoas</option>
+                                                        <option value="AP">Amapá</option>
+                                                        <option value="AM">Amazonas</option>
+                                                        <option value="BA">Bahia</option>
+                                                        <option value="CE">Ceará</option>
+                                                        <option value="DF">Distrito Federal</option>
+                                                        <option value="ES">Espírito Santo</option>
+                                                        <option value="GO">Goiás</option>
+                                                        <option value="MA">Maranhão</option>
+                                                        <option value="MT">Mato Grosso</option>
+                                                        <option value="MS">Mato Grosso do Sul</option>
+                                                        <option value="MG">Minas Gerais</option>
+                                                        <option value="PA">Pará</option>
+                                                        <option value="PB">Paraíba</option>
+                                                        <option value="PR">Paraná</option>
+                                                        <option value="PE">Pernambuco</option>
+                                                        <option value="PI">Piauí</option>
+                                                        <option value="RJ">Rio de Janeiro</option>
+                                                        <option value="RN">Rio Grande do Norte</option>
+                                                        <option value="RS">Rio Grande do Sul</option>
+                                                        <option value="RO">Rondônia</option>
+                                                        <option value="RR">Roraima</option>
+                                                        <option value="SC">Santa Catarina</option>
+                                                        <option value="SP">São Paulo</option>
+                                                        <option value="SE">Sergipe</option>
+                                                        <option value="TO">Tocantins</option>
+                                                    </select>
+                                                </div>
+                                                <div class="invalid-feedback">Por favor, selecione seu estado.</div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vendorZipCode" class="form-label">CEP</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                                <input type="text" class="form-control" id="vendorZipCode" placeholder="00000-000" required>
+                                            </div>
+                                            <div class="invalid-feedback">Por favor, insira um CEP válido.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vendorCategories" class="form-label">Categorias de Doação/Venda</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-tags"></i></span>
+                                                <select class="form-select" id="vendorCategories" multiple required>
+                                                    <option value="fruits">Frutas</option>
+                                                    <option value="vegetables">Vegetais</option>
+                                                    <option value="dairy">Laticínios</option>
+                                                    <option value="bakery">Padaria</option>
+                                                    <option value="meat">Carnes</option>
+                                                    <option value="grains">Grãos</option>
+                                                    <option value="canned">Enlatados</option>
+                                                    <option value="readyMeals">Refeições Prontas</option>
+                                                    <option value="other">Outros</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-text">Segure Ctrl para selecionar múltiplas categorias.</div>
+                                            <div class="invalid-feedback">Por favor, selecione pelo menos uma categoria.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vendorDescription" class="form-label">Descrição do Negócio</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-info-circle"></i></span>
+                                                <textarea class="form-control" id="vendorDescription" rows="3" placeholder="Descreva seu negócio ou atividade"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="vendorTerms" required>
+                                            <label class="form-check-label" for="vendorTerms">Eu concordo com os <a href="terms.html">Termos e Condições</a> e a <a href="privacy.html">Política de Privacidade</a>.</label>
+                                            <div class="invalid-feedback">Você deve concordar com os termos para continuar.</div>
+                                        </div>
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                            <hr class="my-4">
+                            
+                            <div class="text-center">
+                                <p>Já tem uma conta?</p>
+                                <a href="login.html" class="btn btn-outline-primary">Entrar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>SaveAndServe</h5>
+                    <p>Reduzindo o desperdício de alimentos e servindo aos necessitados através de uma plataforma baseada na comunidade.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white">Início</a></li>
+                        <li><a href="about.html" class="text-white">Sobre Nós</a></li>
+                        <li><a href="contact.html" class="text-white">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Recursos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html" class="text-white">Perguntas Frequentes</a></li>
+                        <li><a href="privacy.html" class="text-white">Política de Privacidade</a></li>
+                        <li><a href="terms.html" class="text-white">Termos e Condições</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>Fique Conectado</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                <p>&copy; 2023 SaveAndServe. Todos os direitos reservados.</p>
+                <div>
+                    <a href="privacy.html" class="text-white me-3">Política de Privacidade</a>
+                    <a href="terms.html" class="text-white me-3">Termos e Condições</a>
+                    <a href="contact.html#feedback" class="text-white">Feedback</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script type="module" src="../js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto - SaveAndServe</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/images/logo.svg" alt="SaveAndServe Logo" height="40" class="d-inline-block align-text-top">
+                SaveAndServe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vendors.html">Encontrar Alimentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contato</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="login.html" class="btn btn-outline-primary me-2">Entrar</a>
+                    <a href="register.html" class="btn btn-primary">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Registration Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="text-center mb-4">Cadastrar Novo Produto</h2>
+                            <p class="text-center text-muted mb-4">Preencha os detalhes do produto que você deseja disponibilizar para doação ou venda.</p>
+                            
+                            <form id="productForm" class="needs-validation" novalidate>
+                                <!-- Product Name -->
+                                <div class="mb-3">
+                                    <label for="productName" class="form-label">Nome do Produto <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="productName" placeholder="Ex: Arroz Integral" required>
+                                    <div class="invalid-feedback">Por favor, informe o nome do produto.</div>
+                                </div>
+                                
+                                <!-- Product Description -->
+                                <div class="mb-3">
+                                    <label for="productDescription" class="form-label">Descrição <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="productDescription" rows="3" placeholder="Descreva o produto em detalhes" required></textarea>
+                                    <div class="invalid-feedback">Por favor, forneça uma descrição para o produto.</div>
+                                </div>
+                                
+                                <!-- Product Category -->
+                                <div class="mb-3">
+                                    <label for="productCategory" class="form-label">Categoria <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="productCategory" required>
+                                        <option value="" selected disabled>Selecione uma categoria</option>
+                                        <option value="grains">Grãos e Cereais</option>
+                                        <option value="vegetables">Vegetais e Legumes</option>
+                                        <option value="fruits">Frutas</option>
+                                        <option value="dairy">Laticínios</option>
+                                        <option value="meat">Carnes</option>
+                                        <option value="bakery">Padaria</option>
+                                        <option value="canned">Enlatados</option>
+                                        <option value="frozen">Congelados</option>
+                                        <option value="beverages">Bebidas</option>
+                                        <option value="other">Outros</option>
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, selecione uma categoria.</div>
+                                </div>
+                                
+                                <div class="row">
+                                    <!-- Quantity -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="productQuantity" class="form-label">Quantidade Disponível <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="productQuantity" min="1" placeholder="Ex: 10" required>
+                                            <select class="form-select" id="quantityUnit" required>
+                                                <option value="units">Unidades</option>
+                                                <option value="kg">Kg</option>
+                                                <option value="g">g</option>
+                                                <option value="l">L</option>
+                                                <option value="ml">ml</option>
+                                                <option value="packages">Pacotes</option>
+                                            </select>
+                                            <div class="invalid-feedback">Por favor, informe a quantidade disponível.</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Expiration Date -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="expirationDate" class="form-label">Data de Validade <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" id="expirationDate" required>
+                                        <div class="invalid-feedback">Por favor, informe a data de validade.</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product Image -->
+                                <div class="mb-3">
+                                    <label for="productImage" class="form-label">Imagem do Produto</label>
+                                    <input type="file" class="form-control" id="productImage" accept="image/*">
+                                    <div class="form-text">Adicione uma imagem do produto para melhor visualização (opcional).</div>
+                                </div>
+                                
+                                <!-- Nutritional Information -->
+                                <div class="mb-3">
+                                    <label for="nutritionalInfo" class="form-label">Informações Nutricionais</label>
+                                    <textarea class="form-control" id="nutritionalInfo" rows="2" placeholder="Ex: Rico em proteínas, baixo teor de gordura"></textarea>
+                                    <div class="form-text">Informações nutricionais relevantes (opcional).</div>
+                                </div>
+                                
+                                <!-- Dietary Restrictions -->
+                                <div class="mb-3">
+                                    <label class="form-label">Restrições Alimentares</label>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="glutenFree">
+                                                <label class="form-check-label" for="glutenFree">Sem Glúten</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="lactoseFree">
+                                                <label class="form-check-label" for="lactoseFree">Sem Lactose</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="vegan">
+                                                <label class="form-check-label" for="vegan">Vegano</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="vegetarian">
+                                                <label class="form-check-label" for="vegetarian">Vegetariano</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="sugarFree">
+                                                <label class="form-check-label" for="sugarFree">Sem Açúcar</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="organic">
+                                                <label class="form-check-label" for="organic">Orgânico</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Price Information -->
+                                <div class="mb-3">
+                                    <label class="form-label">Tipo de Oferta <span class="text-danger">*</span></label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="offerType" id="donation" value="donation" checked>
+                                        <label class="form-check-label" for="donation">Doação (Gratuito)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="offerType" id="sale" value="sale">
+                                        <label class="form-check-label" for="sale">Venda (Preço Simbólico)</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Price (conditional) -->
+                                <div class="mb-3" id="priceField" style="display: none;">
+                                    <label for="productPrice" class="form-label">Preço (R$) <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">R$</span>
+                                        <input type="number" class="form-control" id="productPrice" min="0.01" step="0.01" placeholder="0.00">
+                                    </div>
+                                    <div class="form-text">Defina um preço simbólico para o produto.</div>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <div class="d-grid gap-2 mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">Cadastrar Produto</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="mb-3">SaveAndServe</h5>
+                    <p class="text-muted">Reduzindo o desperdício de alimentos, servindo aos necessitados.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-decoration-none text-muted">Início</a></li>
+                        <li><a href="about.html" class="text-decoration-none text-muted">Sobre Nós</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-muted">Contato</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Termos e Condições</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Inscreva-se para Novidades</h5>
+                    <p class="text-muted">Receba atualizações sobre novas funcionalidades e eventos.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Seu e-mail" aria-label="Seu e-mail" aria-describedby="button-addon2">
+                        <button class="btn btn-primary" type="button" id="button-addon2">Inscrever</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">&copy; 2023 SaveAndServe. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-muted"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-muted"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-muted"><i class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-muted"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script type="module" src="../js/add-product.js"></script>
+</body>
+</html>
