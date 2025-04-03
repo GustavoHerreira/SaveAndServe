@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encontrar Alimentos - SaveAndServe</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+    <!-- Modal do Carrinho para Mobile -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items-mobile"></div>
+                    <div id="empty-cart-message-mobile" class="text-center p-3">Seu carrinho está vazio</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar Comprando</button>
+                    <button type="button" class="btn btn-primary" id="checkout-mobile">Finalizar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="../index.html">
@@ -88,115 +109,39 @@
 
         <!-- Lista de Produtos -->
         <section class="products">
-            <div class="row g-4">
-                <!-- Produto 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
-                        <div class="card-body">
-                            <h5 class="card-title">Pães do Dia</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Padaria Bom Pão - São Paulo, SP</h6>
-                            <p class="card-text">Diversos tipos de pães do dia anterior com 50% de desconto.</p>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-success">Venda com Desconto</span>
-                                <span class="text-primary fw-bold">R$ 5,00/kg</span>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 20:00</small></p>
-                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
-                        </div>
+            <div class="container-fluid">
+            <div class="row">
+                <!-- Coluna Principal com Produtos -->
+                <div class="col-lg-9">
+                    <div class="row g-4" id="products-container">
+                        <!-- Os produtos serão inseridos aqui dinamicamente pelo JavaScript -->
                     </div>
                 </div>
-
-                <!-- Produto 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
-                        <div class="card-body">
-                            <h5 class="card-title">Frutas e Legumes</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Mercado Fresh - Rio de Janeiro, RJ</h6>
-                            <p class="card-text">Frutas e legumes frescos para doação. Próprios para consumo imediato.</p>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-info">Doação</span>
-                                <span class="text-primary fw-bold">Gratuito</span>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 18:00</small></p>
-                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                <!-- Carrinho Lateral para Desktop -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="card sticky-top" style="top: 80px;">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Carrinho</h5>
+                            <span class="badge bg-primary" id="cart-count">0</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Produto 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
                         <div class="card-body">
-                            <h5 class="card-title">Refeições Prontas</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Restaurante Sabor & Cia - Belo Horizonte, MG</h6>
-                            <p class="card-text">Marmitas do almoço com 70% de desconto. Pratos variados.</p>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-success">Venda com Desconto</span>
-                                <span class="text-primary fw-bold">R$ 8,00/un</span>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 15:00</small></p>
-                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                            <div id="cart-items"></div>
+                            <div id="empty-cart-message" class="text-center p-3">Seu carrinho está vazio</div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Produto 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
-                        <div class="card-body">
-                            <h5 class="card-title">Feijoada Completa</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Restaurante do Zé - Salvador, BA</h6>
-                            <p class="card-text">Feijoada tradicional com acompanhamentos. Última hora do almoço.</p>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-success">Venda com Desconto</span>
-                                <span class="text-primary fw-bold">R$ 15,00/porção</span>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 16:00</small></p>
-                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 5 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
-                        <div class="card-body">
-                            <h5 class="card-title">Produtos de Padaria</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Padaria Nova Era - Curitiba, PR</h6>
-                            <p class="card-text">Bolos, tortas e salgados do dia com 40% de desconto.</p>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-success">Venda com Desconto</span>
-                                <span class="text-primary fw-bold">A partir de R$ 3,00</span>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 19:00</small></p>
-                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 6 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/600x400/e9ecef/495057?text=Alimento" class="card-img-top" alt="Imagem do produto">
-                        <div class="card-body">
-                            <h5 class="card-title">Hortifruti do Dia</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Feira Livre Central - São Paulo, SP</h6>
-                            <p class="card-text">Verduras e legumes frescos para doação no fim da feira.</p>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-info">Doação</span>
-                                <span class="text-primary fw-bold">Gratuito</span>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Disponível até: Hoje, 14:00</small></p>
-                            <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+                        <div class="card-footer">
+                            <button class="btn btn-primary w-100 mb-2" id="checkout">Finalizar Pedido</button>
+                            <button class="btn btn-outline-danger w-100" id="clear-cart">Limpar Carrinho</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Botão flutuante do carrinho para mobile -->
+        <button class="btn btn-primary rounded-circle position-fixed d-lg-none" style="bottom: 20px; right: 20px; width: 60px; height: 60px; z-index: 1000;" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="bi bi-cart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count-mobile">0</span>
+        </button>
 
             <!-- Paginação -->
             <nav class="mt-5" aria-label="Navegação de página">
@@ -222,5 +167,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/utils/storageUtils.js"></script>
+    <script src="../js/shopping-cart.js"></script>
+    <script src="../js/vendors.js"></script>
 </body>
 </html>
