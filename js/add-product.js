@@ -199,6 +199,100 @@ function previewImage(input) {
 }
 
 /**
+ * Submit the product form
+ */
+function submitProduct() {
+    // Get current user
+    const currentUser = StorageUtils.getData('currentUser');
+    if (!currentUser) {
+        showMessage('Erro: Usuário não está logado.', 'danger');
+        return;
+    }
+
+    // Get form values
+    const productData = {
+        id: generateProductId(),
+        vendorId: currentUser.id,
+        name: document.getElementById('productName').value,
+        description: document.getElementById('productDescription').value,
+        category: document.getElementById('productCategory').value,
+        quantity: {
+            amount: parseFloat(document.getElementById('productQuantity').value),
+            unit: document.getElementById('quantityUnit').value
+        },
+        expirationDate: document.getElementById('expirationDate').value,
+        nutritionalInfo: document.getElementById('nutritionalInfo').value || null,
+        dietaryRestrictions: {
+            glutenFree: document.getElementById('glutenFree').checked,
+            lactoseFree: document.getElementById('lactoseFree').checked,
+            vegan: document.getElementById('vegan').checked,
+            vegetarian: document.getElementById('vegetarian').checked,
+            sugarFree: document.getElementById('sugarFree').checked,
+            organic: document.getElementById('organic').checked
+        },
+        offerType: document.querySelector('input[name="offerType"]:checked').value,
+        price: document.getElementById('sale').checked ? parseFloat(document.getElementById('productPrice').value) : 0,
+        image: document.getElementById('productImage').files[0] ? 
+            document.getElementById('imagePreviewContainer').querySelector('img').src : null,
+        status: 'available',
+        createdAt: new Date().toISOString()
+    };
+
+    // Get existing products
+    let products = StorageUtils.getData('products') || [];
+
+    // Add new product
+    products.push(productData);
+
+    // Save updated products
+    if (StorageUtils.saveData('products', products)) {
+        showMessage('Produto cadastrado com sucesso!', 'success');
+        // Reset form
+        document.getElementById('productForm').reset();
+        // Remove image preview if exists
+        const previewContainer = document.getElementById('imagePreviewContainer');
+        if (previewContainer) {
+            previewContainer.remove();
+        }
+    } else {
+        showMessage('Erro ao cadastrar produto. Tente novamente.', 'danger');
+    }
+}
+
+/**
+ * Generate a unique product ID
+ * @returns {string} A unique ID
+ */
+function generateProductId() {
+    return 'prod_' + Math.random().toString(36).substr(2, 9);
+}
+
+/**
+ * Show a message to the user
+ * @param {string} message The message to show
+ * @param {string} type The type of message ('success' or 'danger')
+ */
+function showMessage(message, type) {
+    // Create message element
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `alert alert-${type} alert-dismissible fade show mt-3`;
+    messageDiv.role = 'alert';
+    messageDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+    `;
+
+    // Insert message before the form
+    const form = document.getElementById('productForm');
+    form.parentNode.insertBefore(messageDiv, form);
+
+    // Remove message after 5 seconds
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 5000);
+}
+
+/**
  * Submit the product to local storage
  */
 function submitProduct() {

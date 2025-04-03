@@ -576,4 +576,7 @@ const StorageUtils = {
             return [];
         }
     }
-}
+};
+
+// Make StorageUtils available globally
+window.StorageUtils = StorageUtils;
